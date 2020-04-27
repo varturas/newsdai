@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends base %}
+
+{% block title %}Newsdai - trader search engine{% endblock %}
+
+{% block postamble %}
+  <link rel="icon" href="/newsdai_bokeh/static/favicon.ico" type="image/x-icon"/>
+  <style>
+    {% include 'styles.css' %}
+  </style>
+{% endblock %}
+
+{% block contents %}
+  <div class="content">
+    <h1><a href="http://www.newsdai.com">Newsdai</a>: trader search engine and predictive analytics toolkit</h1>
+
+    <p>Given market moves, finds related news and relevant concepts. Given a concept, finds past market moves etc...</p>
+
+    {{ super() }}
+
+  </div>
+{% endblock %}
+</html>

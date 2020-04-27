@@ -38,10 +38,7 @@ nohup bokeh serve --allow-websocket-origin=newsdai.com newsdai_mktmv --port 1176
 # TO RUN newsdai mkt move search
 =================================
 
-<nowiki>
-
-...
-
+```
 conda activate py36
 > cd ~/$newsdaiPath/data/newsJson; q createJsonIndexFile.q # create json files with ret
 q) convert[`$":../2006"] // create data/newsJson/*.json files
@@ -58,3 +55,5 @@ q) saveTags[`:newsTags;`news] // to create news with tags
 q) .Q.chk[`:.]
 cd -
 bokeh serve newsdai_mktmv
+```
+

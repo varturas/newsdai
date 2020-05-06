@@ -40,17 +40,8 @@ nohup bokeh serve --allow-websocket-origin=newsdai.com newsdai_mktmv --port 1176
 
 ```
 conda activate py36
-> cd ~/$newsdaiPath/data/newsJson; q createJsonIndexFile.q # create json files with ret
-q) convert[`$":../2006"] // create data/newsJson/*.json files
-> cd ~/$newsdaiPath/data/solr; python json2solrIndx.py -l # run to import data into solr
 > solr start -Dsolr.clustering.enabled=true # run solr
-> cd ~/$newsdaiPath/data/utils; q load_eod.q
-q) load_all[DIRS] // run load.q to create hdb/eod
-> cd ~/$newsdaiPath/data/utils; q utils.q
-q) saveRet[] //to create eodR with ret/ret5
-cd ~/$newsdaiPath/utils; python json2tags.py # to create data/newsTags/*.json files
-> cd ~/$newsdaiPath/data/utils; q utils.q
-q) saveTags[`:newsTags;`news] // to create news with tags
+> cd ~/$newsdaiPath/data/solr; python json2solrIndx.py -l # run to import data into solr
 > cd hdb; q newsdai
 q) .Q.chk[`:.]
 cd -

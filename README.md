@@ -9,12 +9,24 @@ crunching through gigabytes of unstructured documentation in second gives you a 
 
 ## Installation instructions
 
+### Solr Installation
+* download solr: https://lucene.apache.org/solr/downloads.html
+* tar zxf solr-8.2.0.tgz
+* ~/bin/solr start -Dsolr.clustering.enabled=true
+
+### KDB/q Installation
+* download q executable: https://kx.com/connect-with-us/download/
+* for linux install and unzip l64.zip
+* run q/l64/q
+
+### Newsdai Installation
 * clone repository
 * `cd newsdai`
 * create py3.6 environment: `conda create --name py36 python=3.6`
 * `source activate py36`
 * download and install kdb/q distribution with embedPy into py36 environment
 * `pip install -r docs/requirements.txt`
+* pip install qpython
 * make sure gensim,spacy and nltk libraries are installed
 * make sure QHOME points to anaconda environment: otherwise run QHOME=~/anaconda*/envs/py36/q
 

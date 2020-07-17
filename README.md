@@ -15,7 +15,7 @@ crunching through gigabytes of unstructured documentation in second gives you a 
 * ~/bin/solr start -Dsolr.clustering.enabled=true
 
 ### KDB/q Installation
-* download q executable: https://kx.com/connect-with-us/download/
+* download q executable: https://kx.com/connect-with-us/download/ or https://ondemand.kx.com
 * for linux install and unzip l64.zip
 * run q/l64/q
 
@@ -23,13 +23,18 @@ crunching through gigabytes of unstructured documentation in second gives you a 
 * clone repository
 * `cd newsdai`
 * install python3.7 (on mac brew install python, on windows https://www.python.org/downloads/windows/)
-* create py3.6 environment: `conda create --name py37 python=3.7`
-* `conda activate py36`
-* download and install kdb/q distribution with embedPy into py36 environment
+* create py3.7 environment: `conda create --name py37 python=3.7`
+* `conda activate py37`
+* download and install kdb/q distribution with embedPy into py37 environment from https://ondemand.kx.com/
+* install pip: `conda install -c anaconda pip`
 * `pip install -r docs/requirements.txt`
 * pip install qpython
+* if you have difficulties installing pandas with pip install missing packages with conda
+  * `conda install nomkl numpy scipy scikit-learn numexpr pandas matplotlib seaborn`
+* after that you can try to run: code in ~/newsdai/p
+  * `cd p; python term_freq.py -v`
 * make sure gensim,spacy and nltk libraries are installed
-* make sure QHOME points to anaconda environment: otherwise run QHOME=~/anaconda*/envs/py36/q
+* make sure QHOME points to anaconda environment: otherwise run QHOME=~/anaconda*/envs/py37/q
 
 ## Directory structure
 * newsdai/ -- root
@@ -52,7 +57,7 @@ nohup bokeh serve --allow-websocket-origin=newsdai.com newsdai_mktmv --port 1176
 =================================
 
 ```
-conda activate py36
+conda activate py37
 > solr start -Dsolr.clustering.enabled=true # run solr
 > cd ~/$newsdaiPath/data/solr; python json2solrIndx.py -l # run to import data into solr
 > cd hdb; q newsdai
@@ -61,3 +66,9 @@ cd -
 bokeh serve newsdai_mktmv
 ```
 
+# TO examine terms and keywords
+=================================
+```
+cd ~/$newsdaiPath/p
+python term_freq.py -v
+```

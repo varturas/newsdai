@@ -22,8 +22,9 @@ crunching through gigabytes of unstructured documentation in second gives you a 
 ### Newsdai Installation
 * clone repository
 * `cd newsdai`
-* create py3.6 environment: `conda create --name py36 python=3.6`
-* `source activate py36`
+* install python3.7 (on mac brew install python, on windows https://www.python.org/downloads/windows/)
+* create py3.6 environment: `conda create --name py37 python=3.7`
+* `conda activate py36`
 * download and install kdb/q distribution with embedPy into py36 environment
 * `pip install -r docs/requirements.txt`
 * pip install qpython

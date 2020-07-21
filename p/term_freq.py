@@ -100,8 +100,8 @@ class TF:
             pDF['x']  = tt
             if ii<len(tags)-1: lax.set_xticklabels([])
             y_min,y_max = df['y'].min(),df['y'].max()
-            sns.lineplot(x='x',y='y',data=df,ax=lax,hue=df['y'].isna().cumsum(),palette=['blue']*(1+sum(df['y'].isna())),legend=False)
-            lax.legend().set_title(tag)
+            y1 = sns.lineplot(x='x',y='y',data=df,ax=lax,hue=df['y'].isna().cumsum(),palette=['blue']*(1+sum(df['y'].isna())),legend=False)
+            lax.legend(labels=[tag],loc='upper right')
             p_min,p_max = self.ixDF['price'].min(),self.ixDF['price'].max()
             self.ixDF['price'] = (self.ixDF.price - p_min) / (p_max - p_min) * (y_max - y_min) + y_min
             sns.lineplot(x='date', y='price', data=self.ixDF, color='tan', ax=lax)
